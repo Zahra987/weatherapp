@@ -6,6 +6,13 @@ body{
   background:#544947;
   font-family:Montserrat,Arial,sans-serif;
 }
+
+input{
+background-color: #e67354;
+
+}
+
+
 h2{
   font-size:14px;
 }

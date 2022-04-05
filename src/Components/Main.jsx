@@ -1,14 +1,15 @@
-import React from 'react'
-import Clock from './Clock'
-import Lower from './Lower'
-import Upper from './Upper'
+import React ,{useState} from 'react'
+import WeatherInfo from './WeatherInfo'
 
 export default function Main() {
+
+const [inputValue ,setInputValue]= useState("");
+
   return (
-    <div className="widget"> 
-    <Clock/>
-    <Upper/>
-    <Lower/>
-  </div>
+<>
+
+    <input type="text"  value={inputValue} onChange={(e)=>{setInputValue(e.target.value)}}  placeholder="inter city"  />
+    <WeatherInfo />
+</>
   )
 }
