@@ -1,6 +1,10 @@
 import React from 'react'
 
 export default function Upper() {
+
+
+
+  
   return (
     <div className="upper">
       <div className="date">Loading</div>

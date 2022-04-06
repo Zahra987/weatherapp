@@ -1,20 +1,27 @@
-import React , {useEffect , useState} from 'react'
+import React , {useEffect , useState, useRef} from 'react'
 import Clock from './Clock'
+import Loading from './Loading';
 import Lower from './Lower'
 import Upper from './Upper'
 
 
-export default function WeatherInfo( {inputValue} ) {
+export default function WeatherInfo() {
 
-
+const inputRef= useRef();
 
 const [weather,setWeather]= useState({});
 const [main,setMain]= useState({});
 const [wind,setWind]= useState({});
 
+const [inputValue ,setInputValue]= useState("tehran");
 
+const [load,setLoad]=useState(true);
 
 useEffect(()=>{
+
+  setLoad(true);
+
+  inputRef.current.focus();
 
   let response;
   let firstRequest = new XMLHttpRequest;
@@ -29,7 +36,7 @@ useEffect(()=>{
       setWeather(response.weather[0]);
       setMain(response.main);
       setWind(response.wind);
-      
+      setLoad(false)
     }
    
   }
@@ -40,9 +47,11 @@ useEffect(()=>{
 
   return (
     <div className="widget"> 
-    <Clock />
+    <label>ENTER CITY : </label>
+    <input ref={inputRef} type="text"  value={inputValue} onChange={(e)=>{setInputValue(e.target.value)}}  />
+    {(load)?<Loading/> :<><Clock />
     <Upper />
-    <Lower weather={weather} main={main} wind={wind} />
+    <Lower  weather={weather} main={main} wind={wind} /> </>}
   </div>
   )
 }

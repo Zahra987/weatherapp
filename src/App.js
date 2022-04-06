@@ -1,10 +1,11 @@
 
 import './App.css';
-import Main from './Components/Main';
+import WeatherInfo from './Components/WeatherInfo';
+
 
 function App() {
   return (
-    <Main/>
+    <WeatherInfo/>
   );
 }
 
