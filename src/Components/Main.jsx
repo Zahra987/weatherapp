@@ -9,7 +9,7 @@ const [inputValue ,setInputValue]= useState("");
 <>
 
     <input type="text"  value={inputValue} onChange={(e)=>{setInputValue(e.target.value)}}  placeholder="inter city"  />
-    <WeatherInfo />
+    <WeatherInfo inputValue={inputValue} />
 </>
   )
 }

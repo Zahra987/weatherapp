@@ -5,7 +5,7 @@ export default function Upper() {
     <div className="upper">
       <div className="date">Loading</div>
       <div className="year">Loading</div>
-      <div className="place update">Loading</div>
+      <div className="place update">loading</div>
     </div>
   )
 }
