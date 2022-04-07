@@ -16,11 +16,12 @@ const [wind,setWind]= useState({});
 const [inputValue ,setInputValue]= useState("tehran");
 
 const [load,setLoad]=useState(true);
+const [cityName,setCityName]=useState("");
 
 useEffect(()=>{
-
+  
   setLoad(true);
-
+  
   inputRef.current.focus();
 
   let response;
@@ -36,6 +37,7 @@ useEffect(()=>{
       setWeather(response.weather[0]);
       setMain(response.main);
       setWind(response.wind);
+      setCityName(response.name)
       setLoad(false)
     }
    
@@ -50,7 +52,7 @@ useEffect(()=>{
     <label>ENTER CITY : </label>
     <input ref={inputRef} type="text"  value={inputValue} onChange={(e)=>{setInputValue(e.target.value)}}  />
     {(load)?<Loading/> :<><Clock />
-    <Upper />
+    <Upper cityName={cityName} />
     <Lower  weather={weather} main={main} wind={wind} /> </>}
   </div>
   )
