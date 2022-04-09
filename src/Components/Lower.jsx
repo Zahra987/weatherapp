@@ -1,14 +1,6 @@
 import React , {useEffect} from 'react'
 
 export default function Lower({weather,main,wind }) {
-useEffect(()=>{
-  if(main.temp){
-    main.humidity=main.humidity+"%";
-    main.temp=main.temp+ "C";
-    
-  }
-  
-},[main])
 
 
   return (
