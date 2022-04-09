@@ -6,14 +6,22 @@ body{
   background:#544947;
   font-family:Montserrat,Arial,sans-serif;
 }
+
+#myspan{
+  font-size: 17px;
+}
+#myid{
+  font-size: 17px;
+}
+
 label{
-  background-color: #e67354;
+  background-color: #2877fe;
   padding: 2px;
   border-radius: 8% 0% 0% 0%;
 }
 
 input{
-background-color: #e67354;
+background-color: #2877fe;
 border: none;
 border-radius: 0% 12% 0% 0%;
 width: 389px;
@@ -51,7 +59,7 @@ h2{
   font-size:40px;
 }
 .lower{
-  background:#e67354;
+  background:#2877fe;
   border-radius:0 0 5px 5px;
   font-family:'Advent Pro';
   font-weight:200;
@@ -59,7 +67,7 @@ h2{
   width:100%;
 }
 .clock{
-  background:#e67354;
+  background:#2877fe;
   border-radius:100%;
   box-shadow:0 0 0 15px #f5f5f5,0 10px 10px 5px rgba(0,0,0,0.3);
   height:150px;
@@ -111,7 +119,7 @@ h2{
   margin-top:20px;
 }
 .weather p {
-  font-size:20px;padding:10px 0;
+  font-size:22px;padding:10px 0;
 }
 .anim{animation:fade .8s linear;}
 

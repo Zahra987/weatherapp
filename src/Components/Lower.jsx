@@ -19,17 +19,17 @@ useEffect(()=>{
             <img  alt="" src={`https://openweathermap.org/img/wn/${weather.icon}@2x.png`}/>
           </li>
           <li className="info weather">
-            <h2 className="title">TEMP , WEATHER</h2>
-            <p className="main update">{main.temp}</p>
+            <h2 className="title">WEATHER</h2>
+            
             <p className="des update">{weather.description}</p>
           </li>
           <li className="info wind">
             <h2 className="title">WIND</h2>
-            <span >{wind.speed}</span>
+            <span >{wind.speed}<span id="myspan">km/s</span></span>
           </li>
           <li className="info humidity">
             <h2 className="title">HUMIDITY</h2>
-            <span >{main.humidity}</span>
+            <span >{main.humidity}<span id="myid">%</span></span>
           </li>
         </ul>
     </div>

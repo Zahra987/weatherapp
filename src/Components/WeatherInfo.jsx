@@ -17,6 +17,7 @@ const [inputValue ,setInputValue]= useState("tehran");
 
 const [load,setLoad]=useState(true);
 const [cityName,setCityName]=useState("");
+const [country,setCountry]=useState("");
 
 useEffect(()=>{
   
@@ -38,6 +39,7 @@ useEffect(()=>{
       setMain(response.main);
       setWind(response.wind);
       setCityName(response.name)
+      setCountry(response.sys.country)
       setLoad(false)
     }
    
@@ -51,9 +53,9 @@ useEffect(()=>{
     <div className="widget"> 
     <label>ENTER CITY : </label>
     <input ref={inputRef} type="text"  value={inputValue} onChange={(e)=>{setInputValue(e.target.value)}}  />
-    {(load)?<Loading/> :<><Clock />
-    <Upper cityName={cityName} />
-    <Lower  weather={weather} main={main} wind={wind} /> </>}
+    {(load)?<Loading/> :<>
+    <Upper cityName={cityName} country={country} main={main} />
+    <Lower  weather={weather} main={main}  wind={wind} />  </>}
   </div>
   )
 }
