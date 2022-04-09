@@ -24,11 +24,15 @@ input{
 background-color: #2877fe;
 border: none;
 border-radius: 0% 12% 0% 0%;
-width: 389px;
+width: 130px;
 height: 23px;
 
 }
-
+button{
+  width: 80px;
+  border-radius: 0%;
+  height: 23px;
+}
 
 h2{
   font-size:14px;

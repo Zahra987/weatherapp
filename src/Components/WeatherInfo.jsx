@@ -20,9 +20,6 @@ const [cityName,setCityName]=useState("");
 const [country,setCountry]=useState("");
 
 useEffect(()=>{
-  
-  setLoad(true);
-  
   inputRef.current.focus();
 
   let response;
@@ -46,14 +43,15 @@ useEffect(()=>{
   }
   firstRequest.send();
 
-},[inputValue])
+},[load])
 
 
   return (
     <div className="widget"> 
     <label>ENTER CITY : </label>
     <input ref={inputRef} type="text"  value={inputValue} onChange={(e)=>{setInputValue(e.target.value)}}  />
-    {(load)?<Loading/> :<>
+    <button onClick={()=>{setLoad(true)}} type='submit' >search</button>
+    {(load)?<Loading/> :<> <Clock/>
     <Upper cityName={cityName} country={country} main={main} />
     <Lower  weather={weather} main={main}  wind={wind} />  </>}
   </div>
